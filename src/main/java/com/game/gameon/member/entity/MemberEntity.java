@@ -1,5 +1,6 @@
 package com.game.gameon.member.entity;
 
+import com.game.gameon.common.entity.BaseTimeEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -10,10 +11,10 @@ import javax.persistence.*;
 @Table(name = "member")
 @Getter
 @NoArgsConstructor
-public class MemberEntity {
+public class MemberEntity extends BaseTimeEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long seq;
+    private long seq;
 
     @Column(nullable = false, length = 100)
     private String email;
